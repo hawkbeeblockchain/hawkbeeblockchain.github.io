@@ -1,0 +1,124 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+    <meta charset="utf-8">
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <meta name="Keywords" content="Inchain,ins,印链,印股,区块链,区块链开发平台,区块链落地应用,商品防伪,商品溯源">
+    <meta name="description" content="印链是一个定位于区块链商业应用底层平台的公有链项目，是第一个专业的商用区块链应用生态平台，印链的初衷是利用区块链技术打击假冒产品，为品牌商家提供目前最具公信力的技术以保护商家的品牌形象。为此，防伪溯源将是印链的第一个应用，印链团队会全力搭建一个基于防伪溯源为基础的综合自助服务应用，这一应用将为印链积累大量的商家和用户资源，形成流量中心。区块被誉为下一代互联网，印链则可成为下一代的商业互联网。">
+    <title>Inchain（印链）-- 区块连商业应用平台,下一代的商业互联网</title>
+    <link rel="stylesheet" href="./css/base.css"  />
+    <link rel="stylesheet" href="./css/index.css"  />
+</head>
+<body>
+
+<div class="main">
+    <!--头部介绍-->
+    <div class="banner">
+        <div class="header">
+            <img src="./image/logo.png" class="logo-image" />
+            <div class="main-nav">
+                <a href="." class="main-nav-link">首页</a>
+                <a href="#page2" class="main-nav-link">关于小鹰链 </a>
+                <a href="#page3" class="main-nav-link">技术文档 </a>
+                <a href="#page4" class="main-nav-link">解决方案</a>
+                <a href="#page6" class="main-nav-link">愿景</a>
+            </div>
+        </div>
+        <img src="./image/banner.jpg" class="banner-img"/>
+        <div class="main-con">
+            <div class="main-text-time">
+               <img src="./image/banner_text.png"/>
+            </div>
+            <a href="https://jq.qq.com/?_wv=1027&k=4AXuHMU" target="_blank" class="business-register">加入小鹰链群</a>
+        </div>
+    </div>
+
+
+    <!-- cooper end -->
+
+
+
+</div>
+
+<p class="footer-wrapper">hawkbeechain © Copyright 2016 - 2017 . All Rights Reserved渝ICP备16010289号</p>
+</body>
+
+
+<!--down-->
+<canvas width="1000" height="400" id="canvas" style="left:-100px;"><p class="nope">No canvas, no particles</p></canvas>
+<script type="text/javascript" src="./js/jquery-1.8.2.min.js"></script>
+<script type="text/javascript" src="./js/slider.js"></script>
+<script type="text/javascript" src="./js/canva.index.js"></script>
+<script type="text/javascript" src="./js/canva-clock.js"></script>
+<script type="text/javascript">
+    ;(function(){
+        Clock.init('canvas');
+        var avHei = window.screen.availHeight;
+        $('.banner').css('height',avHei);
+
+        $('#tream').flexslider({
+            animation: "slides",
+            direction: "horizontal",
+            slideshow: false
+        });
+        //判断是否为电脑端
+        function IsPC() {
+            var userAgentInfo = navigator.userAgent;
+            var Agents = ["Android", "iPhone",
+                "SymbianOS", "Windows Phone",
+                "iPad", "iPod"];
+            var flag = true;
+            for (var v = 0; v < Agents.length; v++) {
+                if (userAgentInfo.indexOf(Agents[v]) > 0) {
+                    flag = false;
+                    break;
+                }
+            }
+            return flag;
+        }
+        var flag = IsPC(); //true为PC端，false为手机端
+        if(!flag){
+            $('.main-title,.title-des').addClass('to-bottom');
+            return false;
+        }else{
+            //把所有的模块距头部的高度算出来
+            var introduceHei = $('.introduce').offset().top+40;
+            var advantageHei = $('.advantage').offset().top+40;
+            var targetHei= $('.target').offset().top+40;
+            var downloadHei = $('.download').offset().top+40;
+            var treamHei = $('.tream').offset().top+40;
+            var accessHei = $('.access').offset().top+40;
+            var cooperHei = $('.cooper').offset().top+40;
+
+            //当滑动时
+            $(window).scroll(function(event){
+                if($(document).scrollTop()<=introduceHei ){
+                    $('.introduce .main-title,.introduce .title-des').addClass('to-bottom');
+                    //$('.introduce-con').addClass('to-top');
+                }else if($(document).scrollTop()>=introduceHei & $(document).scrollTop()<=advantageHei ){
+                    $('.advantage .main-title,.advantage .title-des').addClass('to-bottom');
+                    //$('.gear-con,.innovate').addClass('to-top');
+                }else if($(document).scrollTop()>=advantageHei & $(document).scrollTop()<=targetHei ){
+                    $('.target .main-title,.target .title-des').addClass('to-bottom');
+                    //$('.target-con').addClass('to-top');
+                }else if($(document).scrollTop()>=targetHei & $(document).scrollTop()<=downloadHei ){
+                    $('.download .main-title,.download .title-des').addClass('to-bottom');
+                    //$('.download .wrapper').addClass('to-top');
+                }else if($(document).scrollTop()>=downloadHei & $(document).scrollTop()<=treamHei ){
+                    $('.tream .main-title,.tream .title-des').addClass('to-bottom');
+                    //$('#tream').addClass('to-top');
+                }
+                else if($(document).scrollTop()>=treamHei & $(document).scrollTop()<=accessHei ){
+                    $('.access .main-title,.access .title-des').addClass('to-bottom');
+                    $('.cooper .main-title,.cooper .title-des').addClass('to-bottom');
+                    //$('.access-con').addClass('to-top');
+                }else if($(document).scrollTop()>=accessHei & $(document).scrollTop()<=cooperHei ){
+                    $('.cooper .main-title,.cooper .title-des').addClass('to-bottom');
+                    //$('.cooper-con').addClass('to-top');
+                }
+            });
+        }
+
+    })();
+</script>
+</html>
